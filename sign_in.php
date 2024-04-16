@@ -8,35 +8,32 @@ error_reporting(0);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="custome_css/sign_in_page.css">
-    
-    <script src="js/bootstarp.min.js"></script>
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/jquery.min.js"></script>
-
+    <link rel="stylesheet" href="ex_css/sign_in.css">
+    <link rel="stylesheet" href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css"/>
     <title>Sign In</title>
 </head>
 <body>
-<div class="wrapper">
-        <div class="logo">
-            <img src="assets/login_animation.png" alt="">
-        </div>
-        <div class="text-center mt-4 name">
+<div class="brand-name"><a href="index.html">Freshers' Guidline</a></div>
+<div class="content">
+       
+        <div class="text">
             Hello Sustian
-        </div>
-        <form class="p-3 mt-3"method="post"action="">
-            <div class="form-field d-flex align-items-center">
-                <span class="far fa-user"></span>
-                <input type="number" name="reg" id="userName" placeholder="Registration No">
+         </div>
+         <form action="" method="post">
+            <div class="field">
+               <span class="fas fa-user"></span>
+               <input type="number" name="reg" id="userName" placeholder="Registration No" required>
             </div>
-            <div class="form-field d-flex align-items-center">
-                <span class="fas fa-key"></span>
-                <input type="password" name="password" id="pwd" placeholder="Password">
+            <div class="field">
+               <span class="fas fa-lock"></span>
+               <input type="password" name="password" id="pwd" placeholder="Password" required>
             </div>
-            <input type="submit" name="sign_in" value="Sign In"class="btn mt-3">
-        </form>
-        
+            <div class="forgot-pass">
+               <a href="forget_pass.php">Forgot Password?</a>
+            </div>
+            <input type="submit" name="sign_in" value="Sign In" class="btn"></input>
+            
+         </form>
     <?php
     require "config.php";
     session_start();
@@ -92,13 +89,13 @@ error_reporting(0);
                         exit(header("location:profile.php"));
 
                     } else {
-                        echo "Hello " . $user_name . "<br>Wait till being verified.";
+                        echo '<span style="color:red;">Hello </span>' . $user_name . '<br><span style="color:red;">Wait till being verified.</span>';
                     }
                 } else {
-                    echo "Hello " . $user_name . "<br>You insert wrong password.Try the exact one.";
+                    echo '<span style="color:red;">Hello </span>' . $user_name . '<br><span style="color:red;">You insert wrong password.Try the exact one.</span>';
                 }
             } else {
-                echo "no user found";
+                echo '<span style="color:red;margin:1rem 0;"> no user found </span>';
             }
 
 
@@ -106,9 +103,10 @@ error_reporting(0);
 
     }
     ?>
-    <div class="text-center fs-6">
-            <a href="forget_pass.php">Forget password?</a> or <a href="sign_up.php">Sign up</a>
-        </div>
+    <div class="sign-up">
+               Not a member?
+               <a href="sign_up.php">signup now</a>
+    </div>
     </div>
     <?php 
     ob_end_flush();

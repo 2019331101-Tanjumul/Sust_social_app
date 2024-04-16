@@ -9,31 +9,27 @@ error_reporting(0);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <script src="js/bootstarp.min.js"></script>
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/jquery.min.js"></script>
+    <link rel="stylesheet" href="ex_css/sign_up.css">
+    
     <title>Registration</title>
 </head>
 
 <body>
-    <div class="container mt-3">
-        <form action="" method="post" enctype="multipart/form-data">
-            <div class="row justify-content-center my-3 mx-4 p-3">
-                <div class="col align-items-center">
-                    <h2>Registration Form</h2>
-                    <p>Please provide correct information</p>
-
-                </div>
-            </div>
-
-            <div class="row justify-content-center my-3 mx-4 p-3 shadow-lg ">
-                <div class="col">
-                    <div class="input-group input-group-lg">
-                        <span class="input-group-text text-warning">Name</span>
-                        <input type="text" name="name" placeholder="Your name" class="form-control">
-                        <span class='input-group-text'>Dept</span>
-                        <select name="dept" class="form-select form-select-md">
+<div class="brand-name"><a href="index.html">Freshers' Guidline</a></div>
+<div class="container">
+    <div class="title">Registration</div>
+    <div class="content">
+      <form action="" method="post" enctype="multipart/form-data">
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">Name</span>
+            <input type="text" name="name" placeholder="Enter your name" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Department</span>
+        
+            <select name="dept">
+                            
                             <option value="ARC">Architecture</option>
                             <option value="CEP">Chemical Engineering & Polymer Science</option>
                             <option value="CEE">Civil & Environmental Engineering</option>
@@ -62,53 +58,63 @@ error_reporting(0);
                             <option value="FES">Forestry & Environmental Science</option>
                             <option value="BUS">Business Administration</option>
                             <option value="SWE">Software Engineering</option>
-                        </select>
-                    </div>
+            </select>
+            
+
+
+            
+          </div>
+          <div class="input-box">
+            <span class="details">Email</span>
+            <input name="email" type="email" placeholder="Enter your email" required>
+          </div>
+    
+          <div class="input-box">
+            <span class="details">Password</span>
+            <input type="password" id="password" name="password" placeholder="Enter your password" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Registration No</span>
+            <input type="text" name="reg" placeholder="Enter your reg no" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Phone Number</span>
+            <input type="text" name="phone" placeholder="Enter your phone no" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Address</span>
+            <input type="text" name="address" id="address" placeholder="Enter your address" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Blood Group</span>
+               
+               <select name="blood" class="form-select">
+                            <option value="A+">A+</option>
+                            <option value="B+">B+</option>
+                            <option value="AB+">AB+</option>
+                            <option value="O+">O+</option>
+                            <option value="A-">A-</option>
+                            <option value="B-">B-</option>
+                            <option value="AB-">AB-</option>
+                            <option value="O-">O-</option>
+                </select>
+            
+                
+          </div>
+
+
+    </div>
+       
+       <div class="birth-container">
+            <span class="birth-title">Date of Birth</span>
+            <div class="birth-group">
+                <div class="birth-item">
+
+                  <input type="number" name="day" min="1" max="31" placeholder="Day">
                 </div>
-            </div>
 
-
-            <div class="row justify-content-center my-3 mx-4 p-3 shadow-lg ">
-                <div class="col">
-                    <div class="form-floating mb-3 mt-3">
-                        <input type="password" class="form-control" id="password" name="password"
-                            placeholder="Password">
-                        <label for="password">Password</label>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="form-floating mb-3 mt-3">
-                        <input type="text" class="form-control" id="address" placeholder="e.g Madina Market, Sylhet"
-                            name="address">
-                        <label for="address">Address</label>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="row justify-content-center my-3 mx-4 p-3 shadow-lg ">
-                <div class="col">
-                    <div class="input-group input-group-md">
-                        <span class="input-group-text text-warning">Email</span>
-                        <input type="email" name="email" placeholder="e.g your_email@gmail.com" class="form-control">
-
-                        <span class="input-group-text text-warning">Phone</span>
-                        <input type="text" name="phone" placeholder="e.g 01234567891" class="form-control">
-
-                        <span class="input-group-text text-warning">Reg. No</span>
-                        <input type="text" name="reg" placeholder="e.g 2019331087" class="form-control">
-                    </div>
-                </div>
-            </div>
-            <div class="row justify-content-center my-3 mx-4 p-3 shadow-lg ">
-                <div class="col">
-                    <p class="text-success">Date of birth</p>
-                    <div class="input-group input-group-md">
-                        <span class="input-group-text text-warning">Day</span>
-                        <input type="number" name="day" class="form-control" min="1" max="31">
-
-                        <span class="input-group-text text-warning">Month</span>
-                        <select name="month" class="form-select">
+                <div class="birth-item">
+                        <select name="month">
                             <option value="January">January</option>
                             <option value="February">February</option>
                             <option value="March">March</option>
@@ -122,66 +128,48 @@ error_reporting(0);
                             <option value="November">November</option>
                             <option value="December">December</option>
                         </select>
-
-                        <span class="input-group-text text-warning">Year</span>
-                        <input type="number" name="year" class="form-control">
-                    </div>
                 </div>
+
+                <div class="birth-item">
+                        <input type="number" name="year" placeholder="Year">
+                </div>
+            
             </div>
 
-            <div class="row justify-content-center my-3 mx-4 p-3 shadow-lg ">
-                <div class="col">
-                    <p class="text-success">Gender</p>
-                    <div class="input-group input-group-md">
-                        <select name="gender" class="form-select">
+          </div>
+        <div class="user-details">
+        <div class="input-box">
+            <span class="details">Gender</span>
+        
+                        <select name="gender">
                             <option value="male">Male</option>
                             <option value="female">Female</option>
                         </select>
-                    </div>
-                </div>
+            
 
-
-                <div class="col">
-                    <p class="text-success">Blood Group</p>
-                    <div class="input-group input-group-md">
-                        <select name="blood" class="form-select">
-                            <option value="A+">A+</option>
-                            <option value="B+">B+</option>
-                            <option value="AB+">AB+</option>
-                            <option value="O+">O+</option>
-                            <option value="A-">A-</option>
-                            <option value="B-">B-</option>
-                            <option value="AB-">AB-</option>
-                            <option value="O-">O-</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="col">
-                    <p class="text-success">Photo</p>
-                    <div class="input-group input-group-md">
-                        <input type="file" name="image">
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="row justify-content-center my-3 mx-4 p-3 shadow-lg ">
-                <div class="col">
-                    <div class="card">
-                        <div class="card-header">
-                            <h5 class="mb-0">Write about your interests as you can help others</h5>
-                        </div>
-                        <div class="card-body">
-                            <textarea name="bio" rows="5" cols="130"></textarea>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row justify-content-center my-3 mx-4 p-3">
-                <input class="btn btn-primary btn-lg btn-block" type="submit" value="Registration" name="submit">
-            </div>
-        </form>
+          </div>
+          <div class="input-box" id="file-select">
+            <span class="details">Profile Photo</span>
+            <input type="file" name="image">
+          </div>
+        </div>
+        <div class="text-container">
+            <span class="text-title">Write about your interests as you can help</span>
+            <textarea name="bio"></textarea>
+        </div>
+       
+        <div class="button">
+          <input type="submit" value="Register" name="submit">
+        </div>
+        <div id="description" style="margin: 10px 0px;
+  color: #595959;
+  font-size: 16px;">
+               Already have an account?
+               <a href="sign_in.php" style=" color: #e20641eb;
+  text-decoration: none;">signin now</a>
+        </div>
+      </form>
+    </div>
     </div>
 
 

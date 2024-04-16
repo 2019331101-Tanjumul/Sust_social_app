@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  /* user-select: none; */
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+html,body{
+  height: 100%;
+}
+body{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(90deg, #d53369 0%, #daae51 100%);
+  text-align: center;
+}
+
+.brand-name{
+  background: transparent;
+  color:white;
+  text-align: center;
+  font-weight: 500;
+  font-size: 35px;
+  letter-spacing: 1px;
+}
+.content{
+  width: 400px;
+  padding: 45px 40px;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+  margin-top: 50px;
+}
+
+
+.content .text{
+  font-size: 25px;
+  font-weight:500;
+  margin-bottom: 35px;
+  color: black;
+}
+.field{
+  height: 50px;
+  width: 100%;
+  display: flex;
+  position: relative;
+  margin-bottom: 1rem;
+}
+.field:nth-child(2){
+  margin-top: 20px;
+}
+.field input{
+  height: 100%;
+  width: 100%;
+  padding-left: 20px;
+  outline: none;
+  border: none;
+  font-size: 18px;
+  background: #f6f2f2;
+  color: #595959;
+  border-radius: 5px;
+  box-shadow: inset 2px 2px 5px #BABECC,
+              inset -5px -5px 10px #ffffff73;
+}
+.field input:focus{
+  box-shadow: inset 1px 1px 2px #BABECC,
+              inset -1px -1px 2px #ffffff73;
+}
+.field span{
+  position: absolute;
+  color: #595959;
+  width: 50px;
+  line-height: 50px;
+}
+
+.forgot-pass{
+  text-align: left;
+  margin: 10px 0 10px 5px;
+}
+.forgot-pass a{
+  font-size: 16px;
+  color: #e20641eb;
+  text-decoration: none;
+}
+.forgot-pass:hover a{
+  text-decoration: underline;
+}
+.btn{
+  margin: 15px 0;
+  width: 100%;
+  height: 50px;
+  font-size: 18px;
+  letter-spacing: 1px;
+  font-weight: 500;
+  background: linear-gradient(90deg, #d53369 0%, #daae51 100%);
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  color: white;
+  box-shadow: 2px 2px 5px #BABECC,
+             -5px -5px 10px #ffffff73;
+}
+
+.btn:hover{
+    background: linear-gradient(90deg, #bb2758 0%, #b78c2f 100%);
+}
+.btn:focus{
+  background: linear-gradient(90deg, #bb2758 0%, #b78c2f 100%);
+}
+.sign-up{
+  margin: 10px 0;
+  color: #595959;
+  font-size: 16px;
+}
+.sign-up a{
+  color: #e20641eb;
+  text-decoration: none;
+}
+.sign-up a:hover{
+  text-decoration: underline;
+}
+
+
+
+
+
+
+

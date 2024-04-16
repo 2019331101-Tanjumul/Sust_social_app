@@ -27,43 +27,45 @@ $url_for_aborting = "other_profile.php?target=" . $target_id;
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <script src="js/bootstarp.min.js"></script>
-    <script src="js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="ex_css/report.css">
     <script src="js/jquery.min.js"></script>
     <title>Report</title>
 </head>
-<body>    <div>
+<body>
+    <div class="container">
+    <div class="title">
         Report Form
     </div>
-    <div>
+    <div class="content">
         <form action="" method="POST"enctype = "multipart/form-data">
-            <div>
+            <div class="report-title">
                 Why do you want to report against
                 <?php echo $target["name"]."???"; ?>
             </div>
 
             <div>
-                <textarea name="complain_details" cols="30" rows="10"></textarea>
+                <textarea name="complain_details"></textarea>
             </div>
 
-            <div>
-                Any image / screenshot as evidence:
+            <div class="img-title">
+                <p>Any image / screenshot as evidence:</p>
                 <input type="file" name="proof">
             </div>
 
-            <div>
-                <input type="submit" value="Report" name="report_button">
-                <input type="reset" value="Clear">
+            <div class="btn-grp">
+                <input type="submit" value="Report" name="report_button" class="report-btn">
+                <input type="reset" value="Clear" class="clear-btn">
             </div>
 
         </form>
-        <div>
+        <div class="abort-btn">
             <a href="<?php echo $url_for_aborting?>"><button>Abort Reporting</button></a>
         </div>
 
     </div>
 
+    </div> 
+   
     <?php
     if(isset($_POST["report_button"]))
     {

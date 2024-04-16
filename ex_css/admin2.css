@@ -1,0 +1,259 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins',sans-serif;
+}
+
+body{
+    background-color: #eee9e9;
+}
+nav{
+    background: linear-gradient(90deg, #d53369 0%, #daae51 100%);
+    width: 100vw;
+}
+
+.container{
+    width:90%;
+    margin: 0 auto;
+}
+
+.nav-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo a{
+    text-decoration: none;
+    color: white;
+    font-size: 29px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.logout-btn{
+    padding: 12px 1.4rem;
+    border-radius: 2rem;
+    background-color: white;
+    border: none;
+    outline: none;
+    color:black;
+    font-size: 1rem;
+    font-weight: 500;
+    margin: 5px 0px;
+    cursor: pointer;
+}
+
+.logout-btn:hover{
+    opacity: .8;
+}
+
+.welcome-wrapper{
+    margin-top:3rem;
+}
+
+.msg{
+   font-size: 33px;
+   font-weight: 500;
+   color: black;
+
+   margin-bottom: 1rem;
+}
+
+.search-title{
+   color: black;
+   font-weight: 500;
+   font-size: 1.1rem;
+   margin-bottom: 10px;
+   text-align: center;
+}
+
+.select-dropdown {
+    position: relative;
+    background-color: white;
+    border-radius: 4px;
+    width:350px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 2px 6px 0 rgba(0, 0, 0, 0.19);
+  }
+
+  .select-dropdown select {
+    font-size: 1rem;
+    font-weight: normal;
+    width:100%;
+    padding: 8px 24px 8px 10px;
+    border: none;
+    background-color: transparent;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+    appearance: none;
+  }
+
+  .select-dropdown select:active, .select-dropdown select:focus {
+    outline: none;
+    box-shadow: none;
+  }
+
+  .select-dropdown:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 8px;
+    width: 0;
+    height: 0;
+    margin-top: -2px;
+    border-top: 5px solid #aaa;
+    border-right: 5px solid transparent;
+    border-left: 5px solid transparent;
+  }
+
+  .welcome-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:1rem;
+    margin-bottom: 5rem;
+  }
+
+  .search-btn{
+    padding:9px;
+    background-color: #d53369;
+    outline: none;
+    border: none;
+    color:white;
+    border-radius: 3px;
+    cursor: pointer;
+    
+  }
+
+  .search-container{
+    display: flex;
+    align-items: center;
+    gap:10px;
+  }
+
+  .all-title{
+  
+    font-size: 1rem;
+    padding-left: 10px;
+  
+  }
+
+  .all-table{
+    background: white;
+    border-radius: 7px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 2px 6px 0 rgba(0, 0, 0, 0.19);
+    width: 100%;
+    margin: .8rem 0;
+    overflow: hidden;
+    border-collapse: collapse;
+
+  }
+
+  table tr{
+    height: 60px;
+    border-bottom: 1px solid #dbd9d9;
+
+  }
+
+  table th{
+    background-color: #d53369;
+    color:white;
+  }
+
+  table td{
+    padding: 10px 0;
+  }
+
+  .verify-btn{
+    background-color: rgb(2, 156, 136);
+    color:white;
+    border: none;
+    outline: none;
+    padding:7px 10px;
+    font-weight: 500;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .verify-btn:hover{
+    background-color: rgb(2, 133, 115);
+  }
+
+  .disable-btn{
+    cursor: pointer;
+    color:white;
+    border: none;
+    outline: none;
+    padding:7px 10px;
+    font-weight: 500;
+    border-radius: 5px;
+    background-color: rgb(243, 70, 70);
+  }
+
+  .disable-btn:hover{
+    background-color: rgb(200, 52, 52);
+  }
+
+  .all-post-table{
+    background: white;
+    border-radius: 7px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 2px 6px 0 rgba(0, 0, 0, 0.19);
+    overflow: hidden;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+  }
+
+  .all-post-table tr{
+    min-height:60px;
+  }
+
+  .all-post-table td{
+    padding:1rem 1.5rem;
+  }
+
+  .delete-btn{
+    cursor: pointer;
+    color:white;
+    border: none;
+    outline: none;
+    padding:7px 10px;
+    font-weight: 500;
+    border-radius: 5px;
+    background-color: rgb(243, 70, 70);
+    margin-top: 10px;
+  }
+
+  .delete-btn:hover{
+    background-color: rgb(200, 52, 52);
+  }
+
+  .report-table{
+    background: white;
+    border-radius: 7px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 2px 6px 0 rgba(0, 0, 0, 0.19);
+    overflow: hidden;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+  }
+
+  .report-table tr{
+    min-height: 60px;
+  }
+
+  .report-table td{
+    padding:10px 1rem;
+  }
+
+  .dept-table{
+    background: white;
+    border-radius: 7px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 2px 6px 0 rgba(0, 0, 0, 0.19);
+    width: 100%;
+    margin: .8rem 0;
+    overflow: hidden;
+    border-collapse: collapse;
+  }

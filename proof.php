@@ -8,15 +8,19 @@ $proof = $_GET["proof"];
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=\, initial-scale=1.0">
+    <link rel="stylesheet" href="ex_css/proof.css">
     <title>Proof</title>
 </head>
 <body>
-    <div>
+    <div class="container">
+    <div class="img-container">
     <img src=<?php echo $proof?>>
     </div>
-    <div>
+    <div class="btn-container">
     <button onclick="history.go(-1);">Go Back</button>
     </div>
+    </div>
+
     
 </body>
 </html>

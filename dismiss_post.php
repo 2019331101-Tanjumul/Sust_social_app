@@ -17,16 +17,14 @@ $q2 = mysqli_query($con,$sql2);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <script src="js/bootstarp.min.js"></script>
-    <script src="js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="ex_css/dismiss.css">
     <script src="js/jquery.min.js"></script>
 
     <title>Deleted</title>
 </head>
 <body>
     <?php
-echo "Post Deleted. <button onclick='history.go(-1);'>Go Back</button>";
+echo "<div class='container'><p>Post <span class='delete'>Deleted</span></p> <button onclick='history.go(-1);' class='back-btn'>Go Back</button></div>";
 ?>
 </body>
 </html>
