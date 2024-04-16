@@ -3,9 +3,9 @@ error_reporting(0);
 
 	$hostname = "localhost";
 	$user = "root";
-	$password = "password";
-	$database = "sust";
-	$port = 4306;
+	$password = "";
+	$database = "sust2";
+	$port = 3306;
 
 
 	$con = mysqli_connect($hostname,$user,$password,$database,$port);	

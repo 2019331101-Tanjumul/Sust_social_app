@@ -38,14 +38,13 @@ $bio = $_SESSION["bio"];
 
   <!-- Vendor CSS Files -->
   <link href="assets_pro/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets_pro/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets_pro/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="assets_pro/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
   <link href="assets_pro/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets_pro/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
   <!-- Template Main CSS File -->
-  <link href="assets_pro/css/style.css" rel="stylesheet">
+  <link href="ex_css/profile.css" rel="stylesheet">
 
   <!-- =======================================================
   
@@ -56,7 +55,7 @@ $bio = $_SESSION["bio"];
 <body>
 
   <!-- ======= Mobile nav toggle button ======= -->
-  <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
+ 
 
   <!-- ======= Header ======= -->
   <header id="header">
@@ -65,7 +64,7 @@ $bio = $_SESSION["bio"];
       <div class="profile">
         <?php
         echo <<<_END
-        <img src="$image" alt="" class="img-fluid rounded-circle">
+        <div class="img-container"><img src="$image" alt=""></div>
         <h1 class="text-light"><a href="profile.php">$name</a></h1>
       _END;
         ?>
@@ -84,7 +83,7 @@ $bio = $_SESSION["bio"];
           <span>Update Account</span></a></li>
 
           <li><a href="delete_account.php" class="nav-link scrollto"><i class="bx bx-book"></i>
-          <span style="color:red;">Delete Account</span></a></li>
+          <span style="color: #800c33;">Delete Account</span></a></li>
         </ul>
       </nav><!-- .nav-menu -->
     </div>
@@ -94,7 +93,7 @@ $bio = $_SESSION["bio"];
   <section id="hero" class="d-flex justify-content-end align-items-center">
     <div class="hero-container me-3" data-aos="fade-in">
       <h1>
-        <?php echo $name; ?>
+        <span><?php echo $name; ?></span>
       </h1>
       <p><span class="typed" data-typed-items="<?php echo "Department of $dept"; ?>"></span></p>
 
@@ -103,7 +102,7 @@ $bio = $_SESSION["bio"];
       </p>
 
       <p>
-        <a href="logout.php"><button>Logout</button></a>
+        <a href="logout.php"><button class="logout-btn">Logout</button></a>
       </p>
     </div>
   </section><!-- End Hero -->
@@ -112,7 +111,7 @@ $bio = $_SESSION["bio"];
 
     <!-- ======= About Section ======= -->
     <section id="about" class="about">
-      <div class="container">
+      <div class="container about-container">
 
         <div class="section-title">
           <h2>About</h2>
@@ -123,15 +122,8 @@ $bio = $_SESSION["bio"];
         </div>
 
         <div class="row">
-          <div class="col-lg-4" data-aos="fade-right">
-            <?php
-            echo <<<_END
-            <img src="$image" class="img-fluid" alt="">
-            _END;
-            ?>
-
-          </div>
-          <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
+          
+          <div class="content" data-aos="fade-left">
             <h3>
               <?php echo "I am studying at Department of $dept"; ?>
             </h3>
@@ -171,7 +163,7 @@ $bio = $_SESSION["bio"];
 
     <!-- ======= Resume Section ======= -->
     <section id="resume" class="resume">
-      <div class="container mt-5">
+      <div class="container posts-container">
 
         <div class="section-title">
           <h2>My Posts</h2>
@@ -181,34 +173,34 @@ $bio = $_SESSION["bio"];
           $q = mysqli_query($con, $sql);
           $total_post = mysqli_num_rows($q);
           ?>
-          <a href="create_post.php"><button class="btn btn-warning">Create Post</button></a>
+          <a href="create_post.php"><button class="create-btn">Create Post</button></a>
           <?php
           if ($total_post == 0) {
 
             echo <<<_END
-                <div>
-                    You haven't post yet.
+                <div class="not-post">
+                    You haven't posted yet.
                 </div>
             _END;
           } else {
             while ($post = mysqli_fetch_assoc($q)) {
               ?>
               <div id="post_details">
-                Posted at: <b>
+                <p class="post-time">Posted at: <b>
                   <?php echo $post["post_time"] ?>
-                </b><br>
-                <?php echo $post["post"] ?>
+                </b></p>
+               <div class="post-writings"> <?php echo $post["post"] ?></div>
                 <?php
                 $url_update = "update_post.php?post_id=" . $post["post_id"];
 
                 $url_delete = "delete_post.php?post_id=" . $post["post_id"];
 
-                echo "<br><a href='$url_update'><button class='btn btn-success text-white'>UPDATE</button></a>";
+                echo "<br><a href='$url_update'><button class='update-btn'>UPDATE</button></a>";
 
 
-                echo "<a href='$url_delete'><button class='btn btn-danger'>DELETE</button></a><br>";
+                echo "<a href='$url_delete'><button class='delete-btn'>DELETE</button></a><br>";
 
-                echo "<hr>Post Notification<hr>";
+                echo "<hr><p class='notifi'>Post Notification</p><hr>";
 
                 $search_interaction_sql = "SELECT * FROM interaction where post_id = $post[post_id];";
 
@@ -217,7 +209,7 @@ $bio = $_SESSION["bio"];
                 $total_interaction = mysqli_num_rows($search_interaction_query);
 
                 if ($total_interaction == 0) {
-                  echo "Nobody Interacts Yet<br>";
+                  echo "<p class='interect-title'>Nobody Interacts Yet</p>";
                 } else {
                   while ($rows = mysqli_fetch_assoc($search_interaction_query)) {
                     $interactor_id = $rows["interacted_id"];
@@ -291,7 +283,6 @@ $bio = $_SESSION["bio"];
     </div>
   </footer><!-- End  Footer -->
 
-
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
       class="bi bi-arrow-up-short"></i></a>
 
@@ -314,119 +305,3 @@ ob_end_flush();
 </body>
 
 </html>
-<!-- 
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://unpkg.com/tailwindcss@1.0.4/dist/tailwind.min.css" rel="stylesheet">
-</head>
-<body class="h-screen overflow-hidden flex items-center justify-center" style="background: #d53369;">
-    <div class="w-full flex flex-row flex-wrap">
-  <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <style>
-  .round {
-    border-radius: 50%;
-  }
-</style>
-
-
-<div class="w-full bg-indigo-100 h-screen flex flex-row flex-wrap justify-center ">
-  
-  <!-- Begin Navbar 
-  
-  <div class="bg-white shadow-lg border-t-4 border-indigo-500 absolute bottom-0 w-full md:w-0 md:hidden flex flex-row flex-wrap">
-    <div class="w-full text-right"><button class="p-2 fa fa-bars text-4xl text-gray-600"></button></div>
-  </div>
-  
-  <div class="w-0 md:w-1/4 lg:w-1/5 h-0 md:h-screen overflow-y-hidden bg-white shadow-lg">
-    <div class="p-5 bg-white sticky top-0">
-      <img class="border border-indigo-100 shadow-lg round" src="http://lilithaengineering.co.za/wp-content/uploads/2017/08/person-placeholder.jpg">
-      <div class="pt-2 border-t mt-5 w-full text-center text-xl text-gray-600">
-        Name Of Person
-      </div>
-    </div>
-    <div class="w-full h-screen antialiased flex flex-col hover:cursor-pointer">
-      <a class="hover:bg-gray-300 bg-gray-200 border-t-2 p-3 w-full text-xl text-left text-gray-600 font-semibold" href=""><i class="fa fa-comment text-gray-600 text-2xl pr-1 pt-1 float-right"></i>Messages</a>
-      <a class="hover:bg-gray-300 bg-gray-200 border-t-2 p-3 w-full text-xl text-left text-gray-600 font-semibold" href=""><i class="fa fa-cog text-gray-600 text-2xl pr-1 pt-1 float-right"></i>Settings</a>
-      <a class="hover:bg-gray-300 bg-gray-200 border-t-2 p-3 w-full text-xl text-left text-gray-600 font-semibold" href=""><i class="fa fa-arrow-left text-gray-600 text-2xl pr-1 pt-1 float-right"></i>Log out</a>
-    </div>
-  </div>
-  
-  <!-- End Navbar 
-  
-  <div class="w-full md:w-3/4 lg:w-4/5 p-5 md:px-12 lg:24 h-full overflow-x-scroll antialiased">
-    <div class="bg-white w-full shadow rounded-lg p-5">
-      <textarea class="bg-pink-150 w-full rounded-lg shadow border p-2" rows="5" placeholder="Ask anything on FreshersGuideline"></textarea>
-      
-      <div class="w-full flex flex-row flex-wrap mt-3">
-        <div class="w-1/3">
-          <select class="w-full p-2 rounded-lg bg-gray-200 shadow border float-left">
-            <option>Public</option>
-            <option>Private</option>
-          </select>
-        </div>
-        <div class="w-2/3">
-          <button type="button" class="float-right bg-indigo-400 hover:bg-indigo-300 text-white p-2 rounded-lg">Submit</button>
-        </div>
-      </div>
-    </div>
-    
-    <div class="mt-3 flex flex-col">
-      
-      
-      <div class="bg-white mt-3">
-        <img class="border rounded-t-lg shadow-lg " src="https://images.unsplash.com/photo-1572817519612-d8fadd929b00?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80">
-        <div class="bg-white border shadow p-5 text-xl text-gray-700 font-semibold">
-          A Pretty Cool photo from the mountains. Image credit to @danielmirlea on Unsplash.
-        </div>
-        <div class="bg-white p-1 border shadow flex flex-row flex-wrap">
-          <div class="w-1/3 hover:bg-gray-200 text-center text-xl text-gray-700 font-semibold">Like</div>
-          <div class="w-1/3 hover:bg-gray-200 border-l-4 border-r- text-center text-xl text-gray-700 font-semibold">Share</div>
-          <div class="w-1/3 hover:bg-gray-200 border-l-4 text-center text-xl text-gray-700 font-semibold">Comment</div>
-        </div>
-        
-        <div class="bg-white border-4 bg-gray-300 border-white rounded-b-lg shadow p-5 text-xl text-gray-700 content-center font-semibold flex flex-row flex-wrap">
-          <div class="w-full">
-            <div class="w-full text-left text-xl text-gray-600">
-              @Some Person
-            </div>
-           Working on Profile for FreshersGUideline
-          </div>
-        </div>
-      </div>
-      
-      
-      <div class="bg-white mt-3">
-        <img class="border rounded-t-lg shadow-lg " src="https://cdn.daily-sun.com/public/news_images/2022/08/11/sust.jpg">
-        <div class="bg-white border shadow p-5 text-2xl text-gray-700 font-semibold">
-          A new gate is launched in the front side of the SUST and it looks amazing. 
-        </div>
-        <div class="bg-white p-1 rounded-b-lg border shadow flex flex-row flex-wrap">
-          <div class="w-1/3 hover:bg-gray-200 text-center text-xl text-gray-700 font-semibold">Like</div>
-          <div class="w-1/3 hover:bg-gray-200 border-l-4 border-r- text-center text-xl text-gray-700 font-semibold">Share</div>
-          <div class="w-1/3 hover:bg-gray-200 border-l-4 text-center text-xl text-gray-700 font-semibold">Comment</div>
-        </div>
-      </div>
-      
-      
-      <div class="bg-white mt-3">
-        <img class="border rounded-t-lg shadow-lg " src="https://www.eyenews.news/media/imgAll/2023February/en/sust-2304071503.jpg">
-        <div class="bg-white border shadow p-5 text-2xl text-gray-700 font-semibold">
-          Sust is now have a pretty good and responsive application fully loaded with helpful and open minded place to get help from the users around the University. 
-        </div>
-        <div class="bg-white p-1 rounded-b-lg border shadow flex flex-row flex-wrap">
-          <div class="w-1/3 hover:bg-gray-200 text-center text-xl text-gray-700 font-semibold">Like</div>
-          <div class="w-1/3 hover:bg-gray-200 border-l-4 border-r- text-center text-xl text-gray-700 font-semibold">Share</div>
-          <div class="w-1/3 hover:bg-gray-200 border-l-4 text-center text-xl text-gray-700 font-semibold">Comment</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-</div>
-</body>
-</html> -->

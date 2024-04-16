@@ -11,11 +11,11 @@ if ($dept == "All") {
     $q_dept = mysqli_query($con, $sql_dept);
     $total_dept = mysqli_num_rows($q_dept);
 
-    echo "<div class='p-3'>There is <b>" . $total_dept ."</b> students.<div>";
+    echo "<div class='container'><p class='all-title'>There are <b>" . $total_dept ."</b> students</p><div>";
 
     if ($total_dept > 0) {
         echo <<<_END
-        <table class='table table-striped table-bordered table-hover p-3'>
+        <table class='container all-table'>
         <tr align='center'>
         <th>Reg. No</th>
         <th>Image</th>
@@ -55,13 +55,13 @@ if ($dept == "All") {
             if ($verification_status["status"] == "unverified") {
                 $output = "<td><form method='POST'action='verify.php'>
             <input type='text'name='target'value='$r[reg]'hidden>
-            <input type='submit'value='Verify'>
+            <input type='submit'value='Verify' class='verify-btn'>
             </form></td>";
                 echo $output;
             } else {
                 $output = "<td><form method='POST'action='unverify.php'>
             <input type='text'name='target'value='$r[reg]'hidden>
-            <input type='submit'value='Disable'>
+            <input type='submit'value='Disable' class='disable-btn'>
             </form></td>";
                 echo $output;
             }
@@ -82,11 +82,11 @@ elseif($dept=="all_posts")
 $q_dept = mysqli_query($con, $sql_dept);
 $total_dept = mysqli_num_rows($q_dept);
 
-echo "<div class='p-3'>Total <b>" . $total_dept . "</b> posts.</div>";
+echo "<div class='container'><p class='all-title'>Total <b>" . $total_dept . "</b> posts</p></div>";
 
 if ($total_dept > 0) {
     echo <<<_END
-        <table class='table table-striped table-bordered table-hover p-3'>
+        <table class='container all-post-table'>
         <tr align='center'>
         <th>User</th>
         <th>Post</th>
@@ -114,19 +114,19 @@ if ($total_dept > 0) {
         $unverify_button = "<a href=$unverify><button>Disable Account</button></a>";
 
         echo "<tr align='center'>";
-        echo "<th>".$user."</th>";
-        echo "<th>".$post."</th>";
-        echo "<th>".$post_time."</th>";
+        echo "<td>".$user."</td>";
+        echo "<td>".$post."</td>";
+        echo "<td>".$post_time."</td>";
         echo "<td>";
         if($verification_status["status"]=="unverified")
         {
             $output = "<form method='POST'action='verify.php'>
             <input type='text'name='target'value='$user'hidden>
-            <input type='submit'value='Verify'>
+            <input type='submit'value='Verify' class='verify-btn'>
             </form>";
             $dismiss = "<form method='POST'action='dismiss_post.php'>
             <input type='text'name='target'value='$r[post_id]'hidden>
-            <input type='submit'value='Delete'>
+            <input type='submit'value='Delete' class='delete-btn'>
             </form>";
             echo $output.$dismiss;
         }
@@ -134,11 +134,11 @@ if ($total_dept > 0) {
         {
             $output = "<form method='POST'action='unverify.php'>
             <input type='text'name='target'value='$user'hidden>
-            <input type='submit'value='Disable'>
+            <input type='submit'value='Disable'class='disable-btn'>
             </form>";
             $dismiss = "<form method='POST'action='dismiss_post.php'>
             <input type='text'name='target'value='$r[post_id]'hidden>
-            <input type='submit'value='Delete'>
+            <input type='submit'value='Delete' class='delete-btn'>
             </form>";
             echo $output.$dismiss;
         }
@@ -159,11 +159,11 @@ elseif($dept=="reported")
 $q_dept = mysqli_query($con, $sql_dept);
 $total_dept = mysqli_num_rows($q_dept);
 
-echo "<div class='p-3'>Total <b>" . $total_dept . "</b> reported users.</div>";
+echo "<div class='container'><p class='all-title'>Total <b>" . $total_dept . "</b> reported users</p></div>";
 
 if ($total_dept > 0) {
     echo <<<_END
-        <table class='table table-striped table-bordered table-hover p-3'>
+        <table class='container report-table'>
         <tr align='center'>
         <th>Reporter</th>
         <th>Complaint</th>
@@ -195,10 +195,10 @@ if ($total_dept > 0) {
         $unverify_button = "<a href=$unverify><button>Disable Account</button></a>";
 
         echo "<tr align='center'>";
-        echo "<th>".$reporter."</th>";
-        echo "<th>".$target."</th>";
-        echo "<th>".$report_details."</th>";
-        echo "<th>";
+        echo "<td>".$reporter."</td>";
+        echo "<td>".$target."</td>";
+        echo "<td>".$report_details."</td>";
+        echo "<td>";
         
         if($proof=="No proof")
         {
@@ -206,21 +206,21 @@ if ($total_dept > 0) {
         }
         else
         {
-            echo "<a href='proof.php?proof=$proof'><button>See Proof</button></a>";
+            echo "<a href='proof.php?proof=$proof'><button class='verify-btn'>See Proof</button></a>";
         }
 
-        echo "</th>";
-        echo "<th>".$reporting_time."</th>";
+        echo "</td>";
+        echo "<td>".$reporting_time."</td>";
         echo "<td>";
         if($verification_status["status"]=="unverified")
         {
             $output = "<form method='POST'action='verify.php'>
             <input type='text'name='target'value='$target'hidden>
-            <input type='submit'value='Verify'>
+            <input type='submit'value='Verify' class='verify-btn'>
             </form>";
             $dismiss = "<form method='POST'action='dismiss_report.php'>
             <input type='text'name='target'value='$r[report_id]'hidden>
-            <input type='submit'value='Dismiss'>
+            <input type='submit'value='Dismiss' class='delete-btn'>
             </form>";
             echo $output.$dismiss;
         }
@@ -228,11 +228,11 @@ if ($total_dept > 0) {
         {
             $output = "<form method='POST'action='unverify.php'>
             <input type='text'name='target'value='$target'hidden>
-            <input type='submit'value='Disable'>
+            <input type='submit'value='Disable' class='verify-btn'>
             </form>";
             $dismiss = "<form method='POST'action='dismiss_report.php'>
             <input type='text'name='target'value='$r[report_id]'hidden>
-            <input type='submit'value='Dismiss'>
+            <input type='submit'value='Dismiss' class='delete-btn'>
             </form>";
             echo $output.$dismiss;
         }
@@ -252,11 +252,11 @@ elseif(in_array($dept,$dept_array)==1)
 $q_dept = mysqli_query($con, $sql_dept);
 $total_dept = mysqli_num_rows($q_dept);
 
-echo "<div class='p-3'>There is <b>" . $total_dept . "</b> users from Department of <b>" . $dept . "</b>.<div>";
+echo "<div class='container'><p class='all-title'>There are <b>" . $total_dept . "</b> users from Department of <b>" . $dept . "</b></p><div>";
 
 if ($total_dept > 0) {
     echo <<<_END
-        <table class='table table-striped table-bordered table-hover p-3'>
+        <table class='container  dept-table'>
         <tr align='center'>
         <th>Reg. No</th>
         <th>Image</th>
@@ -297,7 +297,7 @@ if ($total_dept > 0) {
         {
             $output = "<td><form method='POST'action='verify.php'>
             <input type='text'name='target'value='$r[reg]'hidden>
-            <input type='submit'value='Verify'>
+            <input type='submit'value='Verify' class='verify-btn'>
             </form></td>";
             echo $output;
         }
@@ -305,7 +305,7 @@ if ($total_dept > 0) {
         {
             $output = "<td><form method='POST'action='unverify.php'>
             <input type='text'name='target'value='$r[reg]'hidden>
-            <input type='submit'value='Disable'>
+            <input type='submit'value='Disable' class='disable-btn'>
             </form></td>";
             echo $output;
         }
@@ -321,7 +321,7 @@ if ($total_dept > 0) {
 }
 else
 {
-    echo "Search by topic";
+    echo "";
 }
 
 

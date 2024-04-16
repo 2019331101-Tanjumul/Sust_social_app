@@ -25,112 +25,89 @@ $bio = $_SESSION["bio"];
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <script src="js/bootstarp.min.js"></script>
-    <script src="js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="ex_css/update.css">
     <script src="js/jquery.min.js"></script>
     <title>Account Update</title>
 </head>
 
 <body>
-    <div class="container mt-3">
-        <form action="" method="post" enctype="multipart/form-data">
-            <div class="row justify-content-center my-3 mx-4 p-3">
-                <div class="col align-items-center">
-                    <h2>Update Account</h2>
-                    <p>Some informations can't be changed</p>
-                </div>
-            </div>
-            <div class="row justify-content-center my-3 mx-4 p-3 shadow-lg ">
-                <div class="col">
-                    <div class="input-group input-group-lg">
-                        <span class="input-group-text text-warning">Name</span>
+    <div class="container">
+        <div class="title">Update Account</div>
+        <p>Some informations can't be changed</p>
+        <div class="content">
+          <form action="" method="post" enctype="multipart/form-data">
+            <div class="user-details">
+              <div class="input-box">
+                        <span class="details">Name</span>
                         <input type="text" value="<?php echo $name ?>" class="form-control" readonly>
-
-                        <span class='input-group-text'>Dept</span>
+               </div>
+               <div class="input-box">
+                
+                        <span class='details'>Dept</span>
                         <input type="text" class="form-control" value="<?php echo 'Department of ' . $dept ?>" readonly>
-                    </div>
-                </div>
-            </div>
-            <div class="row justify-content-center my-3 mx-4 p-3 shadow-lg ">
-                <div class="col">
-                    <div class="form-floating mb-3 mt-3">
-                        <input type="password" class="form-control" id="password" name="password2"
-                            placeholder="Password">
-                        <label for="password">Password</label>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="form-floating mb-3 mt-3">
-                        <input type="text" class="form-control" id="address" placeholder="e.g Madina Market, Sylhet"
-                            name="address2" value="<?php echo $address ?>">
-                        <label for="address">Address</label>
-                    </div>
-                </div>
-            </div>
-            <div class="row justify-content-center my-3 mx-4 p-3 shadow-lg ">
-                <div class="col">
-                    <div class="input-group input-group-md">
-                        <span class="input-group-text text-warning">Email</span>
+               </div>
+               <div class="input-box">
+                       <span class="details">Email</span>
                         <input type="email" name="email2" value="<?php echo $email ?>"
                             placeholder="e.g your_email@gmail.com" class="form-control">
+                </div>
+                <div class="input-box">
+                         <span class="details">Password</span>
+                        <input type="password" class="form-control" id="password" name="password2"
+                            placeholder="Password">
 
-                        <span class="input-group-text text-warning">Phone</span>
-                        <input type="text" name="phone2" value="<?php echo $phone ?>" placeholder="e.g 01234567891"
-                            class="form-control">
-
-                        <span class="input-group-text text-warning">Reg. No</span>
+                </div>
+                 <div class="input-box">
+                        <span class="details">Reg. No</span>
                         <input type="text" name="reg" placeholder="e.g 2019331087" value="<?php echo $reg ?>"
                             class="form-control" readonly>
-                    </div>
-                </div>
-            </div>
-            <div class="row justify-content-center my-3 mx-4 p-3 shadow-lg ">
-                <div class="col">
-                    <p class="text-success">Date of birth</p>
-                    <div class="input-group input-group-md">
-                        <input type="text" class="form-control" value="<?php echo $dob ?>" readonly>
-                    </div>
-                </div>
-            </div>
+                 </div>
+                 <div class="input-box">
+                         <span class="details">Phone</span>
+                        <input type="text" name="phone2" value="<?php echo $phone ?>" placeholder="e.g 01234567891"
+                            class="form-control">
+                 </div>
+                 <div class="input-box">
+                       <span class="details">Address</span>
+                          <input type="text" class="form-control" id="address" placeholder="e.g Madina Market, Sylhet"
+                            name="address2" value="<?php echo $address ?>">
+                       
+                 </div>
+       
+              <div class="input-box">
+                <span class="details">Blood Group</span>
+                <input type="text"class="form-control" value="<?php echo $blood ?>" readonly>
+              </div>
+              <div class="input-box">
+              <span class="details">Date of Birth</span>
+              <input type="text" class="form-control" value="<?php echo $dob ?>" readonly>
+              </div>
 
-            <div class="row justify-content-center my-3 mx-4 p-3 shadow-lg ">
-                <div class="col">
-                    <p class="text-success">Gender</p>
-                    <div class="input-group input-group-md">
-                    <input type="text"class="form-control" value="<?php echo $gender ?>" readonly>
-                    </div>
-                </div>
-
-
-                <div class="col">
-                    <p class="text-success">Blood Group</p>
-                    <div class="input-group input-group-md">
-                    <input type="text"class="form-control" value="<?php echo $blood ?>" readonly>
-                    </div>
-                </div>
-
-                <div class="col">
-                    <p class="text-success">Photo</p>
-                    <div class="input-group input-group-md">
-
-                    <input type="file" name="updated_photo">
-                    </div>
-                </div>
+              <div class="input-box">
+              <span class="details">Gender</span>
+              <input type="text"class="form-control" value="<?php echo $gender ?>" readonly>
+              </div>
 
             </div>
-            <div class="row justify-content-center my-3 mx-4 p-3 shadow-lg ">
-                <div class="col">
-                    <p class="text-success">About Yourself</p>
-                    <div class="input-group input-group-md">
-                        <input type="text"name="bio2" class="form-control" value="<?php echo $bio; ?>">
-                    </div>
-                </div>
+            <div class="file-box">
+              <span class="details">Profile-photo</span><br>
+              <input type="file" name="updated_photo" id="file-select">
+              </div>
+
+            <div class="text-container">
+            <span class="text-title">About Yourself</span><br>
+            <input type="text"name="bio2" class="form-control" value="<?php echo $bio; ?>">
             </div>
-            <div class="row justify-content-center my-3 mx-4 p-3">
-                <input class="btn btn-primary btn-lg btn-block" type="submit" value="Update" name="update">
+           
+           
+
+           
+            <div class="button">
+                <input type="submit" value="Update" name="update">
             </div>
         </form>
+        </div>
+
     </div>
 
 
@@ -150,6 +127,7 @@ $bio = $_SESSION["bio"];
         $bio = $bio2;
 
         $_SESSION["email"] = $email;
+
         $_SESSION["phone"] = $phone;
         $_SESSION["address"] = $address;
         $_SESSION["bio"] = $bio;

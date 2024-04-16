@@ -17,42 +17,17 @@ $q1 = mysqli_query($con, $sql1);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <script src="js/bootstarp.min.js"></script>
-    <script src="js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="ex_css/feed2.css">
     <script src="js/jquery.min.js"></script>
-    <style>
-        body {
-            background-color: #f5f7fa;
-        }
 
-        .testimonial-card .card-up {
-            height: 120px;
-            overflow: hidden;
-            border-top-left-radius: .25rem;
-            border-top-right-radius: .25rem;
-        }
-
-        .aqua-gradient {
-            background: linear-gradient(40deg, #2096ff, #05ffa3) !important;
-        }
-
-        .testimonial-card .avatar {
-            width: 120px;
-            margin-top: -60px;
-            overflow: hidden;
-            border: 5px solid #fff;
-            border-radius: 50%;
-        }
-    </style>
-    <title>Registration</title>
+    <title>Feed</title>
 </head>
 
 <body>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-3 px-1 bg-dark position-fixed" id="sticky-sidebar">
-                <div class="nav flex-column flex-nowrap vh-100 overflow-auto text-white p-2">
+            <div id="sticky-sidebar">
+                <div class="nav-container">
                     <a href="profile.php" class="nav-link">My Profile</a>
                     <a href="profile.php#resume" class="nav-link">My Posts</a>
                     <a href="create_post.php" class="nav-link">Create Post</a>
@@ -60,13 +35,14 @@ $q1 = mysqli_query($con, $sql1);
                     <a href="logout.php" class="nav-link">Logout</a>
                 </div>
             </div>
-            <div class="col-9 offset-3" id="main">
+            <div class="main-section" id="main">
 
                 <div class="search_area">
-                    <div>
+    
+                    <div class="form-opt">
                         <form method="post">
-                            <input type="text" name="department" placeholder="Search by department">
-                            <input type="submit" name="search_dept">
+                            <input type="text" name="department" placeholder="Search by department" class="int-field">
+                            <input type="submit" name="search_dept" value="Search" class="s-btn">
                         </form>
                         <?php
                         if (isset ($_POST["search_dept"])) {
@@ -81,18 +57,18 @@ $q1 = mysqli_query($con, $sql1);
                                     $user_regi = $r["reg"];
                                     $user_name = $r["name"];
                                     $a = "other_profile.php?target=" . $user_regi;
-                                    echo "<a href='$a'><button>$user_name</button></a><br>";
+                                    echo "<a href='$a'><button class='search-opt'>$user_name</button></a><br>";
                                 }
                             }
                         }
                         ?>
-                        <hr>
+                        
                     </div>
 
-                    <div>
+                    <div class="form-opt">
                         <form method="post">
-                            <input type="text" name="target_name" placeholder="Search by name">
-                            <input type="submit" name="search_name">
+                            <input type="text" name="target_name" placeholder="Search by name" class="int-field">
+                            <input type="submit" name="search_name" value="Search" class="s-btn">
                         </form>
                         <?php
                         if (isset ($_POST["search_name"])) {
@@ -107,18 +83,18 @@ $q1 = mysqli_query($con, $sql1);
                                     $user_regi = $r["reg"];
                                     $user_name = $r["name"];
                                     $a = "other_profile.php?target=" . $user_regi;
-                                    echo "<a href='$a'><button>$user_name</button></a><br>";
+                                    echo "<a href='$a'><button class='search-opt'>$user_name</button></a><br>";
                                 }
                             }
                         }
                         ?>
-                        <hr>
+                        
                     </div>
 
-                    <div>
+                    <div class="form-opt">
                         <form method="post">
-                            <input type="text" name="topic" placeholder="Search by topic">
-                            <input type="submit" name="search_topic">
+                            <input type="text" name="topic" placeholder="Search by topic" class="int-field">
+                            <input type="submit" name="search_topic" class="s-btn" value="Search">
                         </form>
                         <?php
                         if (isset ($_POST["search_topic"])) {
@@ -133,15 +109,15 @@ $q1 = mysqli_query($con, $sql1);
                                     $user_regi = $r["reg"];
                                     $user_name = $r["name"];
                                     $a = "other_profile.php?target=" . $user_regi;
-                                    echo "<a href='$a'><button class='btn btn-warning mt-2'>$user_name</button></a><br>";
+                                    echo "<a href='$a'><button class='search-opt'>$user_name</button></a><br>";
                                 }
                             }
                         }
                         ?>
-                        <hr>
+                        
                     </div>
                 </div>
-                <h1>All Posts</h1>
+                <h1 class="title">All Posts</h1>
                 <?php
                 while ($r1 = mysqli_fetch_assoc($q1)) {
                     $registration_no = $r1["reg"];
@@ -152,32 +128,32 @@ $q1 = mysqli_query($con, $sql1);
                     $url = "other_profile.php?target=" . $r2["reg"];
 
                     echo <<<_END
-                <section class="mx-auto my-5" style="max-width: 23rem;">
-                    <div class="card testimonial-card mt-2 mb-3">
-                        <div class="card-up aqua-gradient"></div>
-                        <div class="avatar mx-auto white">
+                <section class="post-container">
+                    <div class="card testimonial-card">
+                        <div class="card-up"></div>
+                        <div class="avatar">
                             
                             <a href='$url' title='$r2[name] from $r2[dept]'>
         <img src='$r2[image]'class="rounded-circle img-fluid"></a>
         _END;
                     ?>
                 </div>
-                <div class="card-body text-center">
+                <div class="card-body">
                     <h4 class="card-title font-weight-bold">
                         <?php echo <<<_END
-                            <a href="$url"><button class="btn btn-warning"><b>$r2[name] , $r2[dept]</b></button></a>
+                            <a href="$url"><button class="name-btn"><b>$r2[name] , $r2[dept]</b></button></a>
                             _END;
                         ?>
                     </h4>
-                    <hr>
-                    <p><i class="fas fa-quote-left"></i>
+                
+                    <p class="post-writings">
                         <?php
                         echo <<<_END
                             $r1[post]
                             _END;
                         ?>
                     </p>
-                    <p>
+                    <p class="post-time">
                         <?php
                         echo <<<_END
                             $r1[post_time]
@@ -185,7 +161,7 @@ $q1 = mysqli_query($con, $sql1);
                         ?>
                     </p>
                 </div>
-                <div class="card-footer text-center">
+                <div class="card-footer">
 
                     <?php
                     $sql3 = "SELECT * FROM interaction WHERE post_id = $r1[post_id] and interacted_id = $_SESSION[reg];";
@@ -203,9 +179,9 @@ $q1 = mysqli_query($con, $sql1);
                         echo <<<_END
                             <div>
                                 <form action="interaction.php" method="post">
-                                    <input type='text' name='comment'>
+                                    <input type='text' name='comment' class='interect-int'>
                                     <input type="text" name='post_id' value="$r1[post_id]" hidden>
-                                    <input type='submit' name='interact' value='Interact'>
+                                    <input type='submit' name='interact' value='Interact' class='int-btn'>
                                 </form>
                             </div>
                             _END;

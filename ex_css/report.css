@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins',sans-serif;
+}
+
+
+body{
+    background-color: #eee9e9;;
+}
+
+
+.container{
+    background-color: white;
+    border-radius: 10px;
+    width:40%;
+    margin:3rem auto;
+    padding: 25px 30px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+}
+
+.container .title{
+    font-size: 25px;
+    font-weight: 500;
+    position: relative;
+  }
+  .container .title::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 30px;
+    border-radius: 5px;
+    background: linear-gradient(90deg, #d53369 0%, #daae51 100%);
+  }
+
+  .report-title{
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-top: 1.3rem;
+    margin-bottom: 7px;
+}
+
+textarea{
+    width: 100%;
+    height: 150px;
+    resize: none;
+    outline: none;
+    font-size: 16px;
+    border-radius: 5px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-bottom-width: 2px;
+
+}
+
+textarea:focus
+{
+    border-color: #d53369;
+}
+    
+.img-title{
+    margin-top:1.5rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 2.2rem;
+}
+
+.img-title p{
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+input[type="file"]::file-selector-button {
+    padding:8px .9rem;
+    background-color: #e14177;
+    color:white;
+    outline: none;
+    border-radius: 5px;
+    border:none;
+    margin-right: 10px;
+    margin-top: 7px;
+    cursor: pointer;
+  
+}
+
+input[type="file"]{
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.btn-grp{
+    text-align: right;
+}
+
+.abort-btn{
+    margin-top: -2rem;
+
+}
+
+.abort-btn button{
+    border: none;
+    outline: none;
+    font-size:1rem;
+    font-weight: 500;
+    background: linear-gradient(90deg, #d53369 0%, #daae51 100%);
+    border-radius: 5px;
+    padding: 8px .8rem;
+    color:white;
+    cursor: pointer;
+}
+
+.abort-btn button:hover{
+    /* transform: scale(0.99); */
+    background: linear-gradient(90deg, #bb2758 0%, #b78c2f 100%);
+    }
+
+.btn-grp input{
+    border: none;
+    outline: none;
+    font-size:1rem;
+    font-weight: 500;
+    
+    border-radius: 5px;
+    padding: 8px .8rem;
+    color:white;
+
+}
+
+.clear-btn{
+    background-color: rgb(2, 156, 136);
+    cursor: pointer;
+}
+
+.clear-btn:hover{
+    background-color: rgb(2, 133, 115);
+}
+
+.report-btn{
+    background-color: rgb(243, 70, 70);
+    cursor: pointer;
+}
+
+.report-btn:hover{
+    background-color: rgb(200, 52, 52);
+}
