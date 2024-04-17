@@ -44,7 +44,7 @@ $bio = $_SESSION["bio"];
   <link href="assets_pro/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
   <!-- Template Main CSS File -->
-  <link href="ex_css/profile1.css" rel="stylesheet">
+  <link href="ex_css/profile2.css" rel="stylesheet">
 
   <!-- =======================================================
   

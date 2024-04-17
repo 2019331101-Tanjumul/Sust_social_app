@@ -4,7 +4,7 @@ error_reporting(0);
 	$hostname = "localhost";
 	$user = "root";
 	$password = "";
-	$database = "sust2";
+	$database = "sust3";
 	$port = 3306;
 
 
