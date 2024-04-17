@@ -33,7 +33,7 @@ if ($dept == "All") {
             $verification_status_check_query = mysqli_query($con, $verification_status_check_sql);
             $verification_status = mysqli_fetch_assoc($verification_status_check_query);
 
-            $image = "<img src='$r[image]'class='img'style='width:30%;height:20%;'>";
+            $image = "<img src='$r[image]'class='img'style='width:2rem;height:2rem;border-radius:50%;object-fit:cover;object-position:center;'>";
 
             $verify = "verify.php?target=" . $r["reg"];
 
@@ -274,7 +274,7 @@ if ($total_dept > 0) {
         $verification_status_check_query = mysqli_query($con,$verification_status_check_sql);
         $verification_status = mysqli_fetch_assoc($verification_status_check_query);
         
-        $image = "<img src='$r[image]'class='img'style='width:30%;height:20%;'>";
+        $image = "<img src='$r[image]'class='img'style='width:2rem;height:2rem;border-radius:50%;object-fit:cover;object-position:center;'>";
 
         $verify = "verify.php?target=".$r["reg"];
 

@@ -18,15 +18,15 @@ $status_info = $status_check["status"];
 if($status_info=="Inactive")
 {
     echo<<<_END
-    <img src='$r1[image]'class='img rounded rounded-circle'style='width:15%;height:15%;'>
-    <p class="display-5 text-secondary">$r1[name]<sup class='h6'>Offline</sup></p>
+    <img src='$r1[image]''class='chat-img'>
+    <p class="h3 text-white status-text">$r1[name]<sup class='h6 text-white'>Offline</sup></p>
     _END;
 }
 if($status_info=="Active")
 {
     echo<<<_END
-    <img src='$r1[image]'class='img rounded rounded-circle'style='width:15%;height:15%;'>
-    <p class="h2 text-success font-weight-bolder">$r1[name]<sup class='h6'>Online</sup></p>
+    <img src='$r1[image]'class='chat-img'>
+    <p class="h3 text-white status-text">$r1[name]<sup class='h6 text-white'>Online</sup></p>
     _END;
 }
 ?>

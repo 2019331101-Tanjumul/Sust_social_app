@@ -8,18 +8,16 @@ error_reporting(0);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <script src="js/bootstarp.min.js"></script>
-    <script src="js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="ex_css/old_chats.css">
+
     <script src="js/jquery.min.js"></script>
     <title>Old Chats</title>
 </head>
 
 <body>
-    <div class="container pt-5">
-        <div class="row">
-            <div class="col">
-                <div class='bg-info' style="height:350px;overflow-x:hidden;overflow-y:scroll;" id="chatbox">
+    <div class="wrapper">
+        
+                <div class='chat-field' style="height:500px;overflow-x:hidden;overflow-y:scroll;" id="chatbox">
 
                     <?php
                     session_start();
@@ -44,7 +42,7 @@ error_reporting(0);
                             echo <<<_END
         <div style='text-align:right;'title='$r[sent_time]'>
         <br>
-        <p style='background-color:yellow;max width:70%;display:inline-block;word-wrap:break-word;padding:5px;border-radius:10px;'>
+        <p style='background-color: #d53369;color:white;max width:70%;display:inline-block;word-wrap:break-word;padding:5px 10px;border-radius:10px;'>
         $r[msg]
         </p>
         <br>
@@ -56,7 +54,7 @@ error_reporting(0);
                             echo <<<_END
         <div style='text-align:left;'title='$r[sent_time]'>
         <br>
-        <p style='background-color:lightblue;max width:70%;display:inline-block;word-wrap:break-word;padding:5px;border-radius:10px'>
+        <p style='background-color:lightblue;max width:70%;display:inline-block;word-wrap:break-word;padding:5px 10px;border-radius:10px'>
         $r[msg]
         </p>
         <br>
@@ -69,11 +67,11 @@ error_reporting(0);
 
                     ?>
                 </div>
-                <div id="operation">
+                <div id="operation" class="block-div">
 
                 </div>
-            </div>
-        </div>
+            
+        
     </div>
     <div>
         <input type="text" id="from" value="<?php echo $from ?>" hidden>

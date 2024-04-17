@@ -37,7 +37,7 @@ while ($r = mysqli_fetch_assoc($q)) {
         echo <<<_END
         <div style='text-align:right;'title='$r[sent_time]'>
         <br>
-        <p style='background-color:yellow;max width:70%;display:inline-block;word-wrap:break-word;padding:5px;border-radius:10px;'>
+        <p style='background-color:#d53369;max width:70%;display:inline-block;word-wrap:break-word;padding:5px 10px;border-radius:10px; color:white;'>
         $r[msg]
         </p>
         <br>
@@ -49,7 +49,7 @@ while ($r = mysqli_fetch_assoc($q)) {
         echo <<<_END
         <div style='text-align:left;'title='$r[sent_time]'>
         <br>
-        <p style='background-color:lightblue;max width:70%;display:inline-block;word-wrap:break-word;padding:5px;border-radius:10px'>
+        <p style='background-color:lightblue;max width:70%;display:inline-block;word-wrap:break-word;padding:5px 10px;border-radius:10px'>
         $r[msg]
         </p>
         <br>

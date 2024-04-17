@@ -25,13 +25,13 @@ $r4 = mysqli_num_rows($q4);
 $url = "other_profile.php?target=" . $to;
 
 if ($r3 == 1 and $r4 == 0) {
-    echo "You blocked ".$receiver["name"];
+    echo '<p>You blocked ' . $receiver["name"] . '</p>';
     $unblock_url = "unblock.php?target=" . $to;
-    echo "<a href='$unblock_url'><button class='btn btn-warning'>Click to Unblock</button></a>";
+    echo "<a href='$unblock_url'><button class='btn-3'>Click to Unblock</button></a>";
 } elseif ($r3 == 0 and $r4 == 1) {
-    echo $receiver["name"]." blocked you";
+    echo '<p>' . $receiver["name"] . 'blocked you</p>';
 } else {
-    $output = "<a href='$url'><button>$receiver[name] just unblocks you</button></a>";
+    $output = "<a href='$url'><button class='btn-3'>$receiver[name] just unblocks you</button></a>";
     echo $output;
 }
 
