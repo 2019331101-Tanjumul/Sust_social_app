@@ -25,7 +25,7 @@ if($status_info=="Inactive")
 if($status_info=="Active")
 {
     echo<<<_END
-    <img src='$r1[image]'class='chat-img'>
+    <div class='chat-img-container'><img src='$r1[image]''class='chat-img'></div>
     <p class="h3 text-white status-text">$r1[name]<sup class='h6 text-white'>Online</sup></p>
     _END;
 }

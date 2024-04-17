@@ -50,7 +50,7 @@ if ($I_am_blocked == 1) {
         $block_url = "block.php?target=" . $to_id;
         if ($status_info == "Inactive") {
             echo <<<_END
-        <a href='$start_chat'><button class="btn-2 message-btn">Message</button></a>
+        <a href='$start_chat'><button class="btn-2 message-btn-in">Message</button></a>
     
         <a href='$block_url'><button class="btn-2 block-btn">Block</button></a>
     
@@ -59,7 +59,7 @@ if ($I_am_blocked == 1) {
         }
         if ($status_info == "Active") {
             echo <<<_END
-        <a href='$start_chat'><button class="btn-2 message-btn">Message</button></a>
+        <a href='$start_chat'><button class="btn-2 message-btn-ac">Message</button></a>
     
         <a href='$block_url'><button class="btn-2 block-btn">Block</button></a>
 
