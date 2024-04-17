@@ -25,33 +25,32 @@ $status_info = $status_check["status"];
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="ex_css/start_chat1.css">
+   
     <script src="js/jquery.min.js"></script>
     <title>Chats</title>
 </head>
 
 <body>
-    <div class="container pt-5">
-        <div class="row">
-            <div class="col">
-                <div id="status">
+
+
+            <div class="wrapper">
+                <div id="status" class="status-bar">
 
                 </div>
-                <div class='bg-info' style="height:350px;overflow-x:hidden;overflow-y:scroll;" id="chatbox">
+                <div class='chat-field' style="height:500px;overflow-x:hidden;overflow-y:scroll;" id="chatbox">
 
                 </div>
-                <div class='bg-success'>
-                    <textarea name="msg" id="msg" cols="55" rows="3"></textarea>
+                <div class='text-sender'>
+                    <textarea name="msg" id="msg"></textarea>
                     <input type="text" value="<?php echo $from_id ?>" id="from" hidden>
                     <input type="text" value="<?php echo $to_id ?>" id="to" hidden>
-                    <button class='btn btn-dark' id="send">SEND</button>
+                    <button class='search-btn' id="send">Send</button>
 
                 </div>
             </div>
-        </div>
-    </div>
+        
+
 
     <script>
         var chatbox = document.getElementById('chatbox');

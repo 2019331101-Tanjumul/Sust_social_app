@@ -17,7 +17,7 @@ $q1 = mysqli_query($con, $sql1);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="ex_css/feed2.css">
+    <link rel="stylesheet" href="ex_css/feed3.css">
     <script src="js/jquery.min.js"></script>
 
     <title>Feed</title>
@@ -134,7 +134,7 @@ $q1 = mysqli_query($con, $sql1);
                         <div class="avatar">
                             
                             <a href='$url' title='$r2[name] from $r2[dept]'>
-        <img src='$r2[image]'class="rounded-circle img-fluid"></a>
+        <img src='$r2[image]' class='img-av'></a>
         _END;
                     ?>
                 </div>
@@ -171,7 +171,7 @@ $q1 = mysqli_query($con, $sql1);
 
                     if ($interaction_count != 0) {
                         if ($r3["comment"] != Null) {
-                            echo "You wrote " . $r3["comment"] . "<br>";
+                            echo "<p class='cmt-div'>You wrote <span class='int-cmt'>" . $r3["comment"] . "</span></p><br>";
                         } else {
                             echo "You already interact here<br>";
                         }

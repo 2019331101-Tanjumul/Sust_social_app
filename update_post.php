@@ -20,18 +20,20 @@ $sql = "UPDATE posts SET ";
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <script src="js/bootstarp.min.js"></script>
-    <script src="js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="ex_css/update_post.css">
     <script src="js/jquery.min.js"></script>
     <title>Post Update</title>
 </head>
 <body>
-    
-    <form action="" method="post">
-        <textarea name='new_post'><?php echo $r['post'] ?></textarea>
-        <input type="submit" name="repost" value="Repost">
+
+
+    <div class="container">
+    <form action=""method="post">
+       <textarea name='new_post'><?php echo $r['post'] ?></textarea>
+
+       <div class="btn-div">  <input type="submit" name="repost" value="Repost" class="post-btn"></div>
     </form>
+    </div>
 
 
     <?php

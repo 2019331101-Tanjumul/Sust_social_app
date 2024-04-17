@@ -15,9 +15,7 @@ error_reporting(0);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <script src="js/bootstarp.min.js"></script>
-    <script src="js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="ex_css/other_profile.css">
     <script src="js/jquery.min.js"></script>
     <title><?php echo $r["name"]?></title>
 </head>
@@ -30,31 +28,43 @@ error_reporting(0);
     else{
 
     ?>
-    <div>
-        <a href="profile.php"><button class="btn btn-warning">My Profile</button></a>
+    <div class="nav">
+    <div class="container btn-grp">
+        <a href="profile.php"><button class="btn-1">My Profile</button></a>
 
-        <a href="feed.php"><button class="btn btn-secondary">My Feeds</button></a>
+        <a href="feed.php"><button class="btn-1">My Feeds</button></a>
 
-        <a href="chat.php"><button class="btn btn-danger">My Chats</button></a>
+        <a href="chat.php"><button class="btn-1">My Chats</button></a>
 
     </div>
-    <img src="<?php echo $r['image']?>"class="img rounded rounded-circle"style="width:50%;height:50%;">
-    <br>
-    <?php
-    echo<<<_END
-    <span class='display-2'>$r[name]</span>
-    <br>
-    <span class='text-muted'>Department of $r[dept]</span>
-    <p class='text-dark'>$r[bio]</p>
+    </div>
+   
+    <div class="container profile-container">
+        <div class="img-container">
+        <img src="<?php echo $r['image']?>">
+        </div>
+        <?php
+         echo<<<_END
+           <div class='profile-info'>
+
+           <p class='profile-name'>$r[name]</p>
+           
+           <p class='dept-name'>Department of $r[dept]</p>
+           <p class='bio-details'>$r[bio]</p>
+           </div>
+          
     _END;
     $start_chat = "start_chat.php?target=".$target;
     $make_report = "report.php?target=".$target;
     
     ?>
-
-    <div id="status">
+    <div id="status" class="btn-container">
         
+     </div>
     </div>
+  
+    
+
     <input type="text" id="to"value="<?php echo $target ?>"hidden>
     <?php
     }

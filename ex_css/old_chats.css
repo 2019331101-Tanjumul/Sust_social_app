@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins',sans-serif;
+}
+
+
+body{
+    background-color: #eee9e9;
+}
+
+.wrapper{
+    width:60%;
+    margin:3rem auto;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.chat-field{
+    background-color: white;
+    border-radius: 10px;
+    padding:1rem;
+    box-shadow: rgb(200, 208, 231) 3.2px 3.2px 8px 0px inset, rgb(255, 255, 255) -3.2px -3.2px 8px 0px inset;
+    border: 1px solid #ddd;
+}
+
+.btn-3{
+    padding:7px 14px;
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: 1.5rem;
+    outline: none;
+    border: none;
+    color:white;
+    cursor: pointer;
+    background-color: rgb(246, 181, 2);
+}
+
+.block-div{
+    display: flex;
+    align-items: center;
+    gap:1rem;
+    margin-top:1rem;
+    justify-content: end;
+    padding-right: 1rem;
+}

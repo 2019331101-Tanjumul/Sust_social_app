@@ -40,30 +40,30 @@ if ($I_am_blocked == 1) {
     if ($blocked_or_not == 1) {
         $unblock_url = "unblock.php?target=" . $to_id;
         echo <<<_END
-        <a href='$unblock_url'><button class='btn btn-warning'>Unblock Me</button></a>
+        <a href='$unblock_url'><button class='btn-2 block-btn'>Unblock</button></a>
         
-        <a href="$make_report"><button class='btn btn-primary'>Report</button></a>
+        <a href="$make_report"><button class='btn-2 report-btn'>Report</button></a>
 
-        <a href="$old_chats"><button class='btn btn-primary'>Older Messages</button></a>
+        <a href="$old_chats"><button class='btn-2 message-btn'>Older Messages</button></a>
         _END;
     } else {
         $block_url = "block.php?target=" . $to_id;
         if ($status_info == "Inactive") {
             echo <<<_END
-        <a href='$start_chat'><button class="btn bg-primary  text-white">Message Me</button></a>
+        <a href='$start_chat'><button class="btn-2 message-btn">Message</button></a>
     
-        <a href='$block_url'><button class="btn bg-danger  text-white">Block Me</button></a>
+        <a href='$block_url'><button class="btn-2 block-btn">Block</button></a>
     
-        <a href="$make_report"><button class='btn btn-primary'>Report</button></a>
+        <a href="$make_report"><button class='btn-2 report-btn'>Report</button></a>
         _END;
         }
         if ($status_info == "Active") {
             echo <<<_END
-        <a href='$start_chat'><button class="btn btn-success text-white">Message Me</button></a>
+        <a href='$start_chat'><button class="btn-2 message-btn">Message</button></a>
     
-        <a href='$block_url'><button class="btn bg-danger  text-white">Block Me</button></a>
+        <a href='$block_url'><button class="btn-2 block-btn">Block</button></a>
 
-        <a href="$make_report"><button class='btn btn-primary'>Report</button></a>
+        <a href="$make_report"><button class='btn-2 report-btn'>Report</button></a>
         _END;
         }
 

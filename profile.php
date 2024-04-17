@@ -44,7 +44,7 @@ $bio = $_SESSION["bio"];
   <link href="assets_pro/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
   <!-- Template Main CSS File -->
-  <link href="ex_css/profile.css" rel="stylesheet">
+  <link href="ex_css/profile1.css" rel="stylesheet">
 
   <!-- =======================================================
   
@@ -108,7 +108,7 @@ $bio = $_SESSION["bio"];
   </section><!-- End Hero -->
 
   <main id="main">
-
+    
     <!-- ======= About Section ======= -->
     <section id="about" class="about">
       <div class="container about-container">
@@ -224,21 +224,21 @@ $bio = $_SESSION["bio"];
 
                     echo <<<_END
 
-                        <a href='$interactor_profile' title='$interactor_details[name] from $interactor_details[dept]'>
-                        <img src='$interactor_details[image]'class='img rounded rounded-circle'style='width:10%;height:10%;'></a>
+                        <div class='int-div'><a href='$interactor_profile' title='$interactor_details[name] from $interactor_details[dept]'>
+                        <img src='$interactor_details[image]'></a>
 
-                        <a href="$interactor_profile" title = 'from $interactor_details[dept]'><button class="btn btn-warning">$interactor_details[name] , <b>$interactor_details[dept]</b></button></a>
+                        <a href="$interactor_profile" title = 'from $interactor_details[dept]'><button class="btn-5"><b>$interactor_details[name] , $interactor_details[dept]</b></button></a>
                         _END;
 
                     if ($rows["comment"] != Null) {
-                      echo " says ";
+                      echo " : ";
 
                       echo <<<_END
-                            <mark>$rows[comment]</mark><br>
+                            <span class='cmt'>$rows[comment]</span></div>
                             _END;
 
                     } else {
-                      echo " wants to interact with you.<br>";
+                      echo " wants to interact with you.</div>";
                     }
 
 
