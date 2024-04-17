@@ -109,7 +109,7 @@
     cursor: pointer;
 }
 
-.message-btn{
+.message-btn-in{
   background-color: rgb(45, 65, 218);
 }
 
@@ -121,8 +121,16 @@
     background-color: rgb(246, 181, 2);
 }
 
-.message-btn:hover{
+.message-btn-in:hover{
  background-color: rgb(21, 40, 180);
+}
+
+.message-btn-ac{
+  background-color: rgb(44, 174, 44);
+}
+
+.message-btn-ac:hover{
+  background-color: rgb(22, 138, 22);
 }
 
 .report-btn:hover{

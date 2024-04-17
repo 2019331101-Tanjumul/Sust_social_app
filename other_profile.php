@@ -15,7 +15,7 @@ error_reporting(0);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="ex_css/other_profile.css">
+    <link rel="stylesheet" href="ex_css/other_profile1.css">
     <script src="js/jquery.min.js"></script>
     <title><?php echo $r["name"]?></title>
 </head>
