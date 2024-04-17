@@ -8,7 +8,7 @@ $proof = $_GET["proof"];
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=\, initial-scale=1.0">
-    <link rel="stylesheet" href="ex_css/proof.css">
+    <link rel="stylesheet" href="ex_css/proof1.css">
     <title>Proof</title>
 </head>
 <body>

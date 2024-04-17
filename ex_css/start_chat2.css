@@ -28,9 +28,15 @@
    
 }
 
-.chat-img{
+.chat-img-container{
     width:6rem;
     height: 6rem;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.chat-img-container img{
+    width:100%;
+    height: 100%;
     border-radius: 50%;
     object-fit: cover;
     object-position: center;

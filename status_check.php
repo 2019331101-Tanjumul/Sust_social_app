@@ -18,7 +18,7 @@ $status_info = $status_check["status"];
 if($status_info=="Inactive")
 {
     echo<<<_END
-    <img src='$r1[image]''class='chat-img'>
+    <div class='chat-img-container'><img src='$r1[image]''class='chat-img'></div>
     <p class="h3 text-white status-text">$r1[name]<sup class='h6 text-white'>Offline</sup></p>
     _END;
 }
