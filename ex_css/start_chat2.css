@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+  }
+
+  body{
+    background-color: rgb(246, 219, 235);
+  }
+.wrapper{
+    width:60%;
+    margin: 4rem auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+    overflow: hidden;
+    background: linear-gradient(90deg, #d53369 0%, #daae51 100%);
+
+}
+
+.status-bar{
+    display: flex;
+    align-items: end;
+    gap:1rem;
+    padding:1rem 1.5rem;
+   
+}
+
+.chat-img-container{
+    width:6rem;
+    height: 6rem;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.chat-img-container img{
+    width:100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.chat-field{
+    background-color: white;
+    width:100%;
+    border:1px solid #ddd;
+    padding: 1rem;
+
+}
+
+.text-sender{
+    padding:1rem;
+    display: flex;
+    justify-content: center;
+}
+
+.text-sender textarea{
+    border: 1px solid #ddd;
+    outline: none;
+    border-radius: 20px;
+    height:45px;
+    padding:1rem;
+    resize: none;
+    width:400px;
+    overflow: hidden;
+}
+
+.search-btn{
+    background-color: #cc1b56;
+    color:white;
+    border: none;
+    outline: none;
+    border-radius: 1rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+    padding: 10px 1rem;
+    margin-left: 10px;
+}
+
+
+

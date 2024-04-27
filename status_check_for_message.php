@@ -44,7 +44,7 @@ if ($I_am_blocked == 1) {
         
         <a href="$make_report"><button class='btn-2 report-btn'>Report</button></a>
 
-        <a href="$old_chats"><button class='btn-2 message-btn'>Older Messages</button></a>
+        <a href="$old_chats"><button class='btn-2 message-btn-in'>Older Messages</button></a>
         _END;
     } else {
         $block_url = "block.php?target=" . $to_id;

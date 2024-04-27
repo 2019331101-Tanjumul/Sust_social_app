@@ -26,7 +26,7 @@ $bio = $_SESSION["bio"];
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title><?php echo $name;?></title>
+  <title><?php echo $name; ?></title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -55,7 +55,7 @@ $bio = $_SESSION["bio"];
 <body>
 
   <!-- ======= Mobile nav toggle button ======= -->
- 
+
 
   <!-- ======= Header ======= -->
   <header id="header">
@@ -80,10 +80,10 @@ $bio = $_SESSION["bio"];
           </li>
           <li><a href="feed.php" class="nav-link scrollto"><i class="bx bx-server"></i> <span>My Feeds</span></a></li>
           <li><a href="update_account.php" class="nav-link scrollto"><i class="bx bx-server"></i>
-          <span>Update Account</span></a></li>
+              <span>Update Account</span></a></li>
 
           <li><a href="delete_account.php" class="nav-link scrollto"><i class="bx bx-book"></i>
-          <span style="color: #800c33;">Delete Account</span></a></li>
+              <span style="color: #800c33;">Delete Account</span></a></li>
         </ul>
       </nav><!-- .nav-menu -->
     </div>
@@ -108,7 +108,7 @@ $bio = $_SESSION["bio"];
   </section><!-- End Hero -->
 
   <main id="main">
-    
+
     <!-- ======= About Section ======= -->
     <section id="about" class="about">
       <div class="container about-container">
@@ -122,7 +122,7 @@ $bio = $_SESSION["bio"];
         </div>
 
         <div class="row">
-          
+
           <div class="content" data-aos="fade-left">
             <h3>
               <?php echo "I am studying at Department of $dept"; ?>
@@ -167,7 +167,7 @@ $bio = $_SESSION["bio"];
 
         <div class="section-title">
           <h2>My Posts</h2>
-          
+
           <?php
           $sql = "SELECT * FROM posts where reg = $reg;";
           $q = mysqli_query($con, $sql);
@@ -187,9 +187,9 @@ $bio = $_SESSION["bio"];
               ?>
               <div id="post_details">
                 <p class="post-time">Posted at: <b>
-                  <?php echo $post["post_time"] ?>
-                </b></p>
-               <div class="post-writings"> <?php echo $post["post"] ?></div>
+                    <?php echo $post["post_time"] ?>
+                  </b></p>
+                <div class="post-writings"> <?php echo $post["post"] ?></div>
                 <?php
                 $url_update = "update_post.php?post_id=" . $post["post_id"];
 
@@ -247,22 +247,9 @@ $bio = $_SESSION["bio"];
 
                 ?>
               </div>
-
-              <script src="js/jquery.min.js"></script>
-              <script>
-                $(document).ready(function () {
-
-                  setInterval(function () {
-                    $("#post_details").load(location.href + " #post_details");
-                  }, 1000);
-
-                });
-              </script>
-
               <?php
             }
           }
-          ob_end_flush();
           ?>
 
 
@@ -299,9 +286,22 @@ $bio = $_SESSION["bio"];
 
   <!-- Template Main JS File -->
   <script src="assets_pro/js/main.js"></script>
-<?php 
-ob_end_flush();
-?>
+
+  <script src="js/jquery.min.js"></script>
+  <script>
+    $(document).ready(function () {
+
+      setInterval(function () {
+        $("#resume").load(location.href + " #resume");
+      }, 1000);
+
+    });
+  </script>
+
+  <?php
+  ob_end_flush();
+  ?>
+
 </body>
 
 </html>
